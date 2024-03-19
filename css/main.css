@@ -228,10 +228,23 @@ footer a:not(.nav-link) {
   transform: translateY(-2px);
 }
 
-.marker {
+.marker,.nav-link {
   position: relative;
   display: inline;
   width: auto;
+}
+
+.nav-link::after{
+  content: "";
+  width: 0;
+  height: 30px;
+  position: absolute;
+  bottom: -23px;
+  right: -30px;
+  left: 6%;
+  background-image: url("../images/marker-menu.svg");
+  background-repeat: no-repeat;
+  transition: all .3s ease;
 }
 
 .marker-center {
@@ -240,13 +253,14 @@ footer a:not(.nav-link) {
 
 .marker:after {
   content: "";
-  width: 125px;
+  width: 0;
   height: 30px;
   position: absolute;
   bottom: -25px;
   right: -30px;
   background-image: url("../images/marker.svg");
   background-repeat: no-repeat;
+  transition: all .3s ease;
 }
 
 .marker-center:after {
@@ -268,4 +282,19 @@ footer a:not(.nav-link) {
 
 .entry-title a {
   text-decoration: none;
+}
+
+
+.active-divider::after {
+  width: 125px;
+}
+
+.active-menu::after{
+  width: 60px;
+}
+
+.marker-left::after{
+  bottom: -30px;
+  left: 86%;
+  margin-left: -60px;
 }
